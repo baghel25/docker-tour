@@ -1,0 +1,8 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t baghel25/docker-tour -f Dockerfile.dev .
+script:
+  - docker run baghel25/docker-tour npm run test -- --coverage
